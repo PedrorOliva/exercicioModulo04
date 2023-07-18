@@ -113,7 +113,7 @@ public class RebeldeService {
       Statement statement = Conexao.getConnection().createStatement();
       ResultSet rs = statement.executeQuery(sql);
       while (rs.next()) {
-        if (rs.getString("status").equals("true")) {
+        if (rs.getBoolean("status") == true) {
           rebeldes = rebeldes + 1;
         } else {
           traidores = traidores + 1;
